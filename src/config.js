@@ -30,7 +30,7 @@ function (Settings) {
      *
      */
     //elasticsearch: "http://localhost:9200",
-    elasticsearch: "http://localhost:9500",
+    elasticsearch: window.location.href.split('/').slice(0,3).join('/'),
 
     /** @scratch /configuration/config.js/5
      *
