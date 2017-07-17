@@ -43,7 +43,7 @@
       "collapsable": true,
       "panels": [
         {
-          "span": 12,
+          "span": 9,
           "editable": true,
           "group": [
             "default"
@@ -96,6 +96,38 @@
             "value_type": "cumulative",
             "query_as_alias": false
           }
+        },
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "terms",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "field": "syslog_program.keyword",
+          "exclude": [],
+          "missing": true,
+          "other": true,
+          "size": 8,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "title": "Syslog Programs"
         }
       ],
       "notice": false
