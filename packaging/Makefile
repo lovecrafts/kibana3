@@ -6,15 +6,11 @@ endif
 SHELL=bash
 CWD=$(shell pwd -P)
 NAME=kibana3
-VERSION=$(shell cat VERSION)
-COMMIT=$(shell git log -n 1 --oneline|cut -c 1-7)
-ifdef GIT_BRANCH
-BRANCH=`echo ${GIT_BRANCH}|sed 's,.*/,,'|sed 's,-,_,g'`
-endif
-BRANCH?=$(shell git branch|grep '*'|cut -d" " -f 2|sed 's,-,_,g')
+NAME=kibana3
 BUILD_NUMBER?=DEV
+VERSION=$(shell date +%y%m%d).$(BUILD_NUMBER)
+RELEASE=$(shell git log -n 1 --oneline|cut -c 1-7)
 DONE = echo "====> $@ done"
-RELEASE=$(BUILD_NUMBER).$(BRANCH).$(COMMIT)
 
 help::
 	echo -e "\nKibana3 packaging: Version \033[33m$(VERSION)\033[0m Release: \033[33m$(RELEASE)\033[0m\n"
