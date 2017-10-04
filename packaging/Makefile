@@ -5,15 +5,14 @@ ifndef VERBOSE
 endif
 SHELL=bash
 CWD=$(shell pwd -P)
-NAME=kibana3
-NAME=kibana3
+NAME=kibana3es5x
 BUILD_NUMBER?=DEV
-VERSION=$(shell date +%y%m%d).$(BUILD_NUMBER)
+VERSION=0.$(shell date +%y%m%d).$(BUILD_NUMBER)
 RELEASE=$(shell git log -n 1 --oneline|cut -c 1-7)
 DONE = echo "====> $@ done"
 
 help::
-	echo -e "\nKibana3 packaging: Version \033[33m$(VERSION)\033[0m Release: \033[33m$(RELEASE)\033[0m\n"
+	echo -e "\nKibana3es5x packaging: Version \033[33m$(VERSION)\033[0m Release: \033[33m$(RELEASE)\033[0m\n"
 	grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[33m%-20s\033[0m %s\n", $$1, $$2}'
 
 prepare: clean $(NAME)-$(VERSION).tgz

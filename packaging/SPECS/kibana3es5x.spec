@@ -1,5 +1,5 @@
 
-Name:		kibana3
+Name:		kibana3es5x
 Version:	%{__version}
 Release:	%{__release}
 Summary:	Kibana is a browser based analytics and search interface for Elasticsearch that was developed primarily to view Logstash event data.
