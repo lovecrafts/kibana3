@@ -413,6 +413,7 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
 
       // Create request with id as title. Rethink this.
       var request = ejs.Document(config.kibana_index,type,id).source({
+        '@timestamp': new Date(Date.now()).toISOString(),
         user: 'guest',
         group: 'guest',
         title: save.title,
